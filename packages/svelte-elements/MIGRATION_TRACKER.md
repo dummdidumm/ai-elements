@@ -4,7 +4,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 
 ## Foundational dependency chain
 
-- [ ] shimmer
+- [x] shimmer
 - [ ] code-block
 - [ ] tool (depends on code-block)
 - [ ] plan (depends on shimmer)
@@ -106,7 +106,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 - [ ] reasoning
 - [ ] sandbox
 - [ ] schema-display
-- [ ] shimmer
+- [x] shimmer
 - [ ] snippet
 - [ ] sources
 - [ ] speech-input
