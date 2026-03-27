@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Canvas, Connection, Controls, Edge, Node, Panel, Toolbar } from '../../lib/index.js';
+	import { Canvas, Connection, Controls, Edge, Node, Panel, Toolbar } from '$lib/index.js';
 </script>
 
 <div class="mx-auto flex w-full max-w-6xl flex-col gap-8 p-6 md:p-10">
