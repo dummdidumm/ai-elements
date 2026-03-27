@@ -60,8 +60,7 @@
 	)}
 	style:--spread="{dynamicSpreadPx}px"
 	style:--shimmer-duration="{duration}s"
-	style:background-image="var(--bg), linear-gradient(var(--color-muted-foreground),
-	var(--color-muted-foreground))"
+	style:background-image={`var(--bg), linear-gradient(var(--color-muted-foreground), var(--color-muted-foreground))`}
 	{...rest}
 >
 	{@render children?.()}

@@ -5,7 +5,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 ## Foundational dependency chain
 
 - [x] shimmer
-- [ ] code-block
+- [x] code-block (language picker: native `CodeBlockLanguageSelector` + `CodeBlockLanguageSelectorItem` instead of Radix/shadcn `Select` compound parts)
 - [ ] tool (depends on code-block)
 - [ ] plan (depends on shimmer)
 - [ ] reasoning (depends on shimmer)
@@ -79,7 +79,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 - [ ] canvas
 - [ ] chain-of-thought
 - [ ] checkpoint
-- [ ] code-block
+- [x] code-block
 - [ ] commit
 - [ ] confirmation
 - [ ] connection
