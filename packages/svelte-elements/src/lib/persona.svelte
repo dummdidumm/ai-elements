@@ -1,0 +1,15 @@
+<script lang="ts">
+	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from './utils.js';
+
+	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
+</script>
+
+/* React Rive integration is not available in this package; this is a visual placeholder container. */
+<div
+	class={cn('inline-flex size-16 shrink-0 items-center justify-center rounded-full border bg-muted text-xs', className)}
+	data-slot="persona"
+	{...rest}
+>
+	{@render children?.()}
+</div>
