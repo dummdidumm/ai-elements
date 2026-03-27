@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('w-full rounded-md border bg-background', className)}
+	class={cn('bg-background w-full rounded-md border', className)}
 	data-slot="model-selector"
 	{...rest}
 >

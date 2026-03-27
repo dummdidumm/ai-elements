@@ -7,11 +7,17 @@
 		mediaType: string;
 	};
 
-	let { class: className, base64, mediaType, alt = 'Generated image', ...rest }: ImageProps = $props();
+	let {
+		class: className,
+		base64,
+		mediaType,
+		alt = 'Generated image',
+		...rest
+	}: ImageProps = $props();
 </script>
 
 <img
-	alt={alt}
+	{alt}
 	class={cn('h-auto max-w-full overflow-hidden rounded-md', className)}
 	data-slot="image"
 	src={`data:${mediaType};base64,${base64}`}

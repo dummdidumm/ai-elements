@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('rounded-lg border bg-background font-mono text-sm', className)}
+	class={cn('bg-background rounded-lg border font-mono text-sm', className)}
 	data-slot="file-tree"
 	{...rest}
 >

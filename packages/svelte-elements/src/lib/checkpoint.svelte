@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('flex items-center gap-1 text-muted-foreground', className)}
+	class={cn('text-muted-foreground flex items-center gap-1', className)}
 	data-slot="checkpoint"
 	{...rest}
 >

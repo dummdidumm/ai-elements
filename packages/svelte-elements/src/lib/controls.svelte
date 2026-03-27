@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('inline-flex items-center gap-1 rounded-md border bg-card p-1', className)}
+	class={cn('bg-card inline-flex items-center gap-1 rounded-md border p-1', className)}
 	data-slot="controls"
 	{...rest}
 >

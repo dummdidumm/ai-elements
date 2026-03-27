@@ -7,7 +7,7 @@
 
 /* Media device enumeration popover is intentionally simplified for Svelte baseline parity. */
 <div
-	class={cn('inline-flex items-center gap-2 rounded-md border bg-background p-1', className)}
+	class={cn('bg-background inline-flex items-center gap-2 rounded-md border p-1', className)}
 	data-slot="mic-selector"
 	{...rest}
 >

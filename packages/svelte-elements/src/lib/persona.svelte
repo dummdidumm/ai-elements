@@ -5,9 +5,13 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-/* React Rive integration is not available in this package; this is a visual placeholder container. */
+/* React Rive integration is not available in this package; this is a visual placeholder container.
+*/
 <div
-	class={cn('inline-flex size-16 shrink-0 items-center justify-center rounded-full border bg-muted text-xs', className)}
+	class={cn(
+		'bg-muted inline-flex size-16 shrink-0 items-center justify-center rounded-full border text-xs',
+		className
+	)}
 	data-slot="persona"
 	{...rest}
 >

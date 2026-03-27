@@ -5,11 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
-<div
-	class={cn('relative flex-1 overflow-y-auto', className)}
-	data-slot="conversation"
-	{...rest}
->
+<div class={cn('relative flex-1 overflow-y-auto', className)} data-slot="conversation" {...rest}>
 	{@render children?.()}
 </div>

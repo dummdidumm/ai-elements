@@ -10,10 +10,21 @@
 		onSeek?: (time: number) => void;
 	};
 
-	let { class: className, children, segments = [], currentTime = 0, onSeek, ...rest }: Props = $props();
+	let {
+		class: className,
+		children,
+		segments = [],
+		currentTime = 0,
+		onSeek,
+		...rest
+	}: Props = $props();
 </script>
 
-<div class={cn('flex flex-wrap gap-1 text-sm leading-relaxed', className)} data-slot="transcription" {...rest}>
+<div
+	class={cn('flex flex-wrap gap-1 text-sm leading-relaxed', className)}
+	data-slot="transcription"
+	{...rest}
+>
 	{#if children}
 		{@render children()}
 	{:else}
@@ -26,7 +37,7 @@
 						: currentTime >= segment.endSecond
 							? 'text-muted-foreground'
 							: 'text-muted-foreground/60',
-					onSeek ? 'cursor-pointer hover:text-foreground' : 'cursor-default'
+					onSeek ? 'hover:text-foreground cursor-pointer' : 'cursor-default'
 				)}
 				onclick={() => onSeek?.(segment.startSecond)}
 				type="button"

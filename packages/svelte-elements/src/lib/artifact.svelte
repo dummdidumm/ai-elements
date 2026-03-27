@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('flex flex-col overflow-hidden rounded-lg border bg-background shadow-sm', className)}
+	class={cn('bg-background flex flex-col overflow-hidden rounded-lg border shadow-sm', className)}
 	data-slot="artifact"
 	{...rest}
 >

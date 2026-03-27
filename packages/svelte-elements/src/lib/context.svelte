@@ -5,11 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
-<div
-	class={cn('inline-flex items-center gap-2 text-sm', className)}
-	data-slot="context"
-	{...rest}
->
+<div class={cn('inline-flex items-center gap-2 text-sm', className)} data-slot="context" {...rest}>
 	{@render children?.()}
 </div>

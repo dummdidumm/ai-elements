@@ -5,11 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
-<div
-	class={cn('not-prose mb-4 text-xs', className)}
-	data-slot="sources"
-	{...rest}
->
+<div class={cn('not-prose mb-4 text-xs', className)} data-slot="sources" {...rest}>
 	{@render children?.()}
 </div>

@@ -5,11 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
-<div
-	class={cn('space-y-2', className)}
-	data-slot="task"
-	{...rest}
->
+<div class={cn('space-y-2', className)} data-slot="task" {...rest}>
 	{@render children?.()}
 </div>

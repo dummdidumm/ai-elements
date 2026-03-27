@@ -6,7 +6,12 @@
 </script>
 
 /* React Flow connection-line integration is simplified to a static SVG primitive in Svelte. */
-<svg class={cn('h-16 w-full text-ring', className)} data-slot="connection" viewBox="0 0 240 80" {...rest}>
+<svg
+	class={cn('text-ring h-16 w-full', className)}
+	data-slot="connection"
+	viewBox="0 0 240 80"
+	{...rest}
+>
 	<path d="M8 56 C 120 56 120 24 232 24" fill="none" stroke="currentColor" stroke-width="1.5" />
 	<circle cx="232" cy="24" r="3" fill="currentColor" />
 	{#if children}

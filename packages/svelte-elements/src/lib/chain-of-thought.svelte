@@ -5,7 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
 	class={cn('not-prose w-full space-y-3 text-sm', className)}
 	data-slot="chain-of-thought"

@@ -5,9 +5,8 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('rounded-lg border bg-background p-4', className)}
+	class={cn('bg-background rounded-lg border p-4', className)}
 	data-slot="package-info"
 	{...rest}
 >

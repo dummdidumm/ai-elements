@@ -5,9 +5,11 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
 <div
-	class={cn('not-prose w-full overflow-hidden rounded-lg border bg-background font-mono text-sm', className)}
+	class={cn(
+		'not-prose bg-background w-full overflow-hidden rounded-lg border font-mono text-sm',
+		className
+	)}
 	data-slot="stack-trace"
 	{...rest}
 >

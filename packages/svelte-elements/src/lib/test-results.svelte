@@ -5,11 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-
-<div
-	class={cn('rounded-lg border bg-background', className)}
-	data-slot="test-results"
-	{...rest}
->
+<div class={cn('bg-background rounded-lg border', className)} data-slot="test-results" {...rest}>
 	{@render children?.()}
 </div>
