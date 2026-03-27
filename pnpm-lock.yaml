@@ -496,6 +496,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.2.8
         version: 5.2.8
+      '@internationalized/date':
+        specifier: ^3.12.0
+        version: 3.12.0
       '@lucide/svelte':
         specifier: ^1.7.0
         version: 1.7.0(svelte@5.55.0)
