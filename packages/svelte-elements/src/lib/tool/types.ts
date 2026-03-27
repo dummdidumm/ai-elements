@@ -1,0 +1,34 @@
+import type { DynamicToolUIPart, ToolUIPart } from 'ai';
+import { Collapsible } from 'bits-ui';
+import type { ComponentProps } from 'svelte';
+import type { HTMLAttributes } from 'svelte/elements';
+
+export type ToolPart = ToolUIPart | DynamicToolUIPart;
+
+export type ToolProps = ComponentProps<typeof Collapsible.Root>;
+
+type BaseToolHeaderProps = Omit<ComponentProps<typeof Collapsible.Trigger>, 'child'> & {
+	title?: string;
+	state: ToolPart['state'];
+};
+
+export type ToolHeaderProps =
+	| (BaseToolHeaderProps & {
+			type: ToolUIPart['type'];
+			toolName?: never;
+	  })
+	| (BaseToolHeaderProps & {
+			type: DynamicToolUIPart['type'];
+			toolName: string;
+	  });
+
+export type ToolContentProps = ComponentProps<typeof Collapsible.Content>;
+
+export type ToolInputProps = {
+	input: ToolPart['input'];
+} & Omit<HTMLAttributes<HTMLDivElement>, 'children'>;
+
+export type ToolOutputProps = {
+	output: ToolPart['output'];
+	errorText: ToolPart['errorText'];
+} & Omit<HTMLAttributes<HTMLDivElement>, 'children'>;

@@ -6,11 +6,11 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 
 - [x] shimmer
 - [x] code-block (language picker: native `CodeBlockLanguageSelector` + `CodeBlockLanguageSelectorItem` instead of Radix/shadcn `Select` compound parts)
-- [ ] tool (depends on code-block)
-- [ ] plan (depends on shimmer)
-- [ ] reasoning (depends on shimmer)
-- [ ] agent (depends on code-block)
-- [ ] sandbox (depends on tool)
+- [x] tool (depends on code-block)
+- [x] plan (depends on shimmer)
+- [x] reasoning (depends on shimmer)
+- [x] agent (depends on code-block)
+- [x] sandbox (depends on tool)
 
 ## Remaining components by docs groups
 
@@ -72,7 +72,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 
 ## Full source parity checklist
 
-- [ ] agent
+- [x] agent
 - [ ] artifact
 - [ ] attachments
 - [ ] audio-player
@@ -100,11 +100,11 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 - [ ] package-info
 - [ ] panel
 - [ ] persona
-- [ ] plan
+- [x] plan
 - [ ] prompt-input
 - [ ] queue
-- [ ] reasoning
-- [ ] sandbox
+- [x] reasoning
+- [x] sandbox
 - [ ] schema-display
 - [x] shimmer
 - [ ] snippet
@@ -116,7 +116,7 @@ This tracker mirrors `packages/elements/src/*.tsx` and follows dependency-first 
 - [ ] terminal
 - [ ] test-results
 - [ ] toolbar
-- [ ] tool
+- [x] tool
 - [ ] transcription
 - [ ] voice-selector
 - [ ] web-preview
