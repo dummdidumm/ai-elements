@@ -10,7 +10,7 @@
 
 {#if output || errorText}
 	<div class={cn('space-y-2', className)} data-slot="tool-output" {...rest}>
-		<h4 class="font-medium text-muted-foreground text-xs uppercase tracking-wide">
+		<h4 class="text-muted-foreground text-xs font-medium tracking-wide uppercase">
 			{errorText ? 'Error' : 'Result'}
 		</h4>
 		<div

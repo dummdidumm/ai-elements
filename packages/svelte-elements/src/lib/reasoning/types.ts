@@ -1,6 +1,5 @@
 import { Collapsible } from 'bits-ui';
 import type { ComponentProps } from 'svelte';
-import type { HTMLAttributes } from 'svelte/elements';
 
 export type ReasoningProps = ComponentProps<typeof Collapsible.Root> & {
 	isStreaming?: boolean;
@@ -16,4 +15,4 @@ export type ReasoningTriggerProps = ComponentProps<typeof Collapsible.Trigger> &
 
 export type ReasoningContentProps = {
 	content?: string;
-} & Omit<HTMLAttributes<HTMLDivElement>, 'children'>;
+} & ComponentProps<typeof Collapsible.Content>;

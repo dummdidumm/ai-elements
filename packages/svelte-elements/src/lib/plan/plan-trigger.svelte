@@ -15,7 +15,7 @@
 			type="button"
 			{...props}
 			class={cn(
-				'inline-flex size-8 shrink-0 items-center justify-center gap-2 rounded-md font-medium text-sm whitespace-nowrap transition-all outline-none hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4',
+				'hover:bg-accent hover:text-accent-foreground inline-flex size-8 shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4',
 				className
 			)}
 			data-slot="plan-trigger"

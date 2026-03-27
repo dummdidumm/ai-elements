@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class={cn('text-balance text-muted-foreground text-sm', className)}
+	class={cn('text-muted-foreground text-sm text-balance', className)}
 	data-slot="plan-description"
 	{...rest}
 >

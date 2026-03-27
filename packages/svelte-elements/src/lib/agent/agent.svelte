@@ -5,10 +5,6 @@
 	let { class: className, children, ...rest }: AgentProps = $props();
 </script>
 
-<div
-	class={cn('not-prose w-full rounded-md border', className)}
-	data-slot="agent"
-	{...rest}
->
+<div class={cn('not-prose w-full rounded-md border', className)} data-slot="agent" {...rest}>
 	{@render children?.()}
 </div>

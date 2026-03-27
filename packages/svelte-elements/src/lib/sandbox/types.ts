@@ -8,7 +8,7 @@ export type SandboxProps = ComponentProps<typeof Collapsible.Root>;
 export type SandboxHeaderProps = {
 	title?: string;
 	state: ToolUIPart['state'];
-} & HTMLAttributes<HTMLButtonElement>;
+} & ComponentProps<typeof Collapsible.Trigger>;
 
 export type SandboxContentProps = ComponentProps<typeof Collapsible.Content>;
 export type SandboxTabsProps = ComponentProps<typeof Tabs.Root>;

@@ -6,8 +6,8 @@
 </script>
 
 <div class={cn('space-y-2', className)} data-slot="agent-instructions" {...rest}>
-	<span class="font-medium text-muted-foreground text-sm">Instructions</span>
-	<div class="rounded-md bg-muted/50 p-3 text-muted-foreground text-sm">
+	<span class="text-muted-foreground text-sm font-medium">Instructions</span>
+	<div class="bg-muted/50 text-muted-foreground rounded-md p-3 text-sm">
 		{#if children}
 			{@render children()}
 		{:else}

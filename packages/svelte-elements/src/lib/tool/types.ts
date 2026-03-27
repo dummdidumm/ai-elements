@@ -7,20 +7,15 @@ export type ToolPart = ToolUIPart | DynamicToolUIPart;
 
 export type ToolProps = ComponentProps<typeof Collapsible.Root>;
 
-type BaseToolHeaderProps = Omit<ComponentProps<typeof Collapsible.Trigger>, 'child'> & {
+type BaseToolHeaderProps = Omit<ComponentProps<typeof Collapsible.Trigger>, 'child' | 'type'> & {
 	title?: string;
 	state: ToolPart['state'];
+	toolName?: string;
 };
 
-export type ToolHeaderProps =
-	| (BaseToolHeaderProps & {
-			type: ToolUIPart['type'];
-			toolName?: never;
-	  })
-	| (BaseToolHeaderProps & {
-			type: DynamicToolUIPart['type'];
-			toolName: string;
-	  });
+export type ToolHeaderProps = BaseToolHeaderProps & {
+	type: ToolUIPart['type'] | DynamicToolUIPart['type'];
+};
 
 export type ToolContentProps = ComponentProps<typeof Collapsible.Content>;
 

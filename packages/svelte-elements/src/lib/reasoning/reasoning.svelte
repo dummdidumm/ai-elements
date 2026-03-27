@@ -19,19 +19,27 @@
 		...rest
 	}: ReasoningProps = $props();
 
-	const isExplicitlyClosed = defaultOpen === false;
-
-	let uncontrolledOpen = $state(defaultOpen ?? isStreaming);
+	let uncontrolledOpen = $state(false);
 	let durationInternal = $state<number | undefined>(undefined);
-	let hasEverStreamed = $state(isStreaming);
+	let hasEverStreamed = $state(false);
 	let hasAutoClosed = $state(false);
-	let startTime = $state<number | null>(isStreaming ? Date.now() : null);
+	let startTime = $state<number | null>(null);
+	let initialized = $state(false);
+
+	$effect(() => {
+		if (initialized) {
+			return;
+		}
+		uncontrolledOpen = defaultOpen ?? isStreaming;
+		hasEverStreamed = isStreaming;
+		startTime = isStreaming ? Date.now() : null;
+		initialized = true;
+	});
 
 	const resolvedOpen = $derived(openProp !== undefined ? openProp : uncontrolledOpen);
+	const isExplicitlyClosed = $derived(defaultOpen === false);
 
-	const resolvedDuration = $derived(
-		durationProp !== undefined ? durationProp : durationInternal
-	);
+	const resolvedDuration = $derived(durationProp !== undefined ? durationProp : durationInternal);
 
 	function setIsOpen(next: boolean) {
 		if (openProp === undefined) {

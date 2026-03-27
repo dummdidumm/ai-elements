@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class={cn('flex w-full items-center border-border border-t border-b', className)}
+	class={cn('border-border flex w-full items-center border-t border-b', className)}
 	data-slot="sandbox-tabs-bar"
 	{...rest}
 >

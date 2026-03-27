@@ -26,7 +26,7 @@
 
 <span
 	class={cn(
-		'inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-full border border-transparent bg-secondary px-2 py-0.5 font-medium text-secondary-foreground text-xs whitespace-nowrap transition-[color,box-shadow] [&>svg]:pointer-events-none [&>svg]:size-3',
+		'bg-secondary text-secondary-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] [&>svg]:pointer-events-none [&>svg]:size-3',
 		className
 	)}
 	data-slot="tool-status-badge"

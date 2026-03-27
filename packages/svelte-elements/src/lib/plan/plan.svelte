@@ -8,12 +8,7 @@
 		isStreaming?: boolean;
 	};
 
-	let {
-		class: className,
-		isStreaming = false,
-		children,
-		...rest
-	}: Props = $props();
+	let { class: className, isStreaming = false, children, ...rest }: Props = $props();
 
 	const plan = $state({ isStreaming: false });
 	$effect(() => {
@@ -27,7 +22,7 @@
 		<div
 			{...props}
 			class={cn(
-				'flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-none',
+				'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-none',
 				className
 			)}
 		>

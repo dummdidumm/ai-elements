@@ -12,11 +12,11 @@
 	{...rest}
 >
 	<div class="flex items-center gap-2">
-		<BotIcon class="size-4 text-muted-foreground" />
-		<span class="font-medium text-sm">{name}</span>
+		<BotIcon class="text-muted-foreground size-4" />
+		<span class="text-sm font-medium">{name}</span>
 		{#if model}
 			<span
-				class="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-transparent bg-secondary px-2 py-0.5 font-medium font-mono text-secondary-foreground text-xs whitespace-nowrap transition-[color,box-shadow]"
+				class="bg-secondary text-secondary-foreground inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-transparent px-2 py-0.5 font-mono text-xs font-medium whitespace-nowrap transition-[color,box-shadow]"
 				data-slot="agent-model-badge"
 			>
 				{model}

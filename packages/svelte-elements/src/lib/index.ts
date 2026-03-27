@@ -50,7 +50,14 @@ import {
 	SandboxTabsList,
 	SandboxTabsTrigger
 } from './sandbox/index.js';
-import { Tool, ToolContent, ToolHeader, ToolInput, ToolOutput, ToolStatusBadge } from './tool/index.js';
+import {
+	Tool,
+	ToolContent,
+	ToolHeader,
+	ToolInput,
+	ToolOutput,
+	ToolStatusBadge
+} from './tool/index.js';
 
 export { Shimmer };
 export type TextShimmerProps = ComponentProps<typeof Shimmer>;

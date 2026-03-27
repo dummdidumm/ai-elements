@@ -19,14 +19,14 @@
 >
 	<Accordion.Header>
 		<Accordion.Trigger
-			class="flex flex-1 items-start justify-between gap-4 px-3 py-2 text-left font-medium text-sm transition-all outline-none hover:no-underline [&[data-state=open]>svg]:rotate-180"
+			class="flex flex-1 items-start justify-between gap-4 px-3 py-2 text-left text-sm font-medium transition-all outline-none hover:no-underline [&[data-state=open]>svg]:rotate-180"
 		>
 			{tool.description ?? 'No description'}
 		</Accordion.Trigger>
 	</Accordion.Header>
 	<Accordion.Content class="px-3 pb-3">
-		<div class="rounded-md bg-muted/50">
-			<CodeBlock code={JSON.stringify(schema(), null, 2)} language="json" />
+		<div class="bg-muted/50 rounded-md">
+			<CodeBlock code={JSON.stringify(schema, null, 2)} language="json" />
 		</div>
 		{@render children?.()}
 	</Accordion.Content>

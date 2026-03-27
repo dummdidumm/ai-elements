@@ -7,8 +7,8 @@
 </script>
 
 <div class={cn('space-y-2', className)} data-slot="agent-tools">
-	<span class="font-medium text-muted-foreground text-sm">Tools</span>
-	<Accordion.Root class="rounded-md border" type="multiple" {...rest}>
+	<span class="text-muted-foreground text-sm font-medium">Tools</span>
+	<Accordion.Root class="rounded-md border" {...rest}>
 		{@render children?.()}
 	</Accordion.Root>
 </div>
