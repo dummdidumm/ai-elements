@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Image, OpenInChat } from '$lib';
+	import { Image, OpenInChat } from '$lib/index.js';
 
 	const demoSvgBase64 =
 		'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjAiIGhlaWdodD0iMTYwIiB2aWV3Qm94PSIwIDAgMzIwIDE2MCI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNlZmY2ZmYiLz48dGV4dCB4PSIxNjAiIHk9Ijg0IiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMTExODI3Ij5VdGlsaXR5IEltYWdlPC90ZXh0Pjwvc3ZnPg==';

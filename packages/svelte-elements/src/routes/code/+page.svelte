@@ -14,7 +14,7 @@
 		Terminal,
 		TestResults,
 		WebPreview
-	} from '$lib';
+	} from '../../lib/index.js';
 </script>
 
 <div class="mx-auto flex w-full max-w-6xl flex-col gap-8 p-6 md:p-10">
@@ -148,7 +148,9 @@
 				<PackageInfo class="space-y-2">
 					<p class="text-sm font-medium">@repo/svelte-elements</p>
 					<p class="text-muted-foreground text-sm">Version 0.9.0</p>
-					<p class="text-muted-foreground text-xs">Includes chatbot, code, and graph UI primitives.</p>
+					<p class="text-muted-foreground text-xs">
+						Includes chatbot, code, and graph UI primitives.
+					</p>
 				</PackageInfo>
 			</div>
 		</section>
@@ -156,19 +158,19 @@
 		<section class="rounded-xl border p-4 md:col-span-2">
 			<h2 class="text-lg font-medium">SchemaDisplay</h2>
 			<p class="text-muted-foreground mt-1 text-sm">
-				How to use: Wrap structured schema details in <code>&lt;SchemaDisplay&gt;</code> for API or
-				payload documentation.
+				How to use: Wrap structured schema details in <code>&lt;SchemaDisplay&gt;</code> for API or payload
+				documentation.
 			</p>
 			<div class="mt-4 rounded-lg border p-3">
 				<SchemaDisplay class="divide-y text-sm">
 					<div class="grid grid-cols-12 gap-2 px-3 py-2">
 						<span class="col-span-3 font-mono">id</span>
-						<span class="col-span-2 text-muted-foreground">string</span>
+						<span class="text-muted-foreground col-span-2">string</span>
 						<span class="col-span-7">Unique release identifier</span>
 					</div>
 					<div class="grid grid-cols-12 gap-2 px-3 py-2">
 						<span class="col-span-3 font-mono">status</span>
-						<span class="col-span-2 text-muted-foreground">enum</span>
+						<span class="text-muted-foreground col-span-2">enum</span>
 						<span class="col-span-7">draft | approved | deployed</span>
 					</div>
 				</SchemaDisplay>
@@ -233,7 +235,9 @@
 			</p>
 			<div class="mt-4 rounded-lg border p-3">
 				<WebPreview class="min-h-36 overflow-hidden">
-					<div class="bg-muted/30 border-b px-3 py-2 text-xs">https://preview.example.dev/release</div>
+					<div class="bg-muted/30 border-b px-3 py-2 text-xs">
+						https://preview.example.dev/release
+					</div>
 					<div class="p-3 text-sm">
 						<p class="font-medium">Release dashboard</p>
 						<p class="text-muted-foreground mt-1 text-xs">
