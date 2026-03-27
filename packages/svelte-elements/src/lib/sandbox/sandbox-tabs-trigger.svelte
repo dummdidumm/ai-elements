@@ -8,7 +8,7 @@
 
 <Tabs.Trigger
 	class={cn(
-		'text-muted-foreground data-[state=active]:border-primary data-[state=active]:text-foreground rounded-none border-0 border-b-2 border-transparent px-4 py-2 text-sm font-medium transition-colors data-[state=active]:bg-transparent data-[state=active]:shadow-none',
+		'rounded-none border-0 border-b-2 border-transparent px-4 py-2 text-sm font-medium text-muted-foreground transition-colors data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none',
 		className
 	)}
 	data-slot="sandbox-tabs-trigger"

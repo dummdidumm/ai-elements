@@ -27,11 +27,11 @@
 	{...rest}
 >
 	<div class="flex items-center gap-2">
-		<WrenchIcon class="text-muted-foreground size-4" />
+		<WrenchIcon class="size-4 text-muted-foreground" />
 		<span class="text-sm font-medium">{title ?? derivedName}</span>
 		<ToolStatusBadge status={state} />
 	</div>
 	<ChevronDownIcon
-		class="text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+		class="size-4 text-muted-foreground transition-transform group-data-[state=open]:rotate-180"
 	/>
 </Collapsible.Trigger>

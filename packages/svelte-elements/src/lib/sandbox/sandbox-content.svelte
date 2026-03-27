@@ -8,7 +8,7 @@
 
 <Collapsible.Content
 	class={cn(
-		'data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:animate-in data-[state=open]:slide-in-from-top-2 outline-none',
+		'outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:animate-in data-[state=open]:slide-in-from-top-2',
 		className
 	)}
 	data-slot="sandbox-content"

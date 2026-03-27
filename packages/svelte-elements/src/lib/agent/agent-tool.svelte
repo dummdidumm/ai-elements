@@ -23,7 +23,7 @@
 		{tool.description ?? 'No description'}
 	</Accordion.Trigger>
 	<Accordion.Content class="px-3 pb-3">
-		<div class="bg-muted/50 rounded-md">
+		<div class="rounded-md bg-muted/50">
 			<CodeBlock code={JSON.stringify(schema, null, 2)} language="json" />
 		</div>
 		{@render children?.()}

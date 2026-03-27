@@ -30,7 +30,7 @@
 
 <Collapsible.Trigger
 	class={cn(
-		'text-muted-foreground hover:text-foreground flex w-full items-center gap-2 text-sm transition-colors',
+		'flex w-full items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground',
 		className
 	)}
 	data-slot="reasoning-trigger"

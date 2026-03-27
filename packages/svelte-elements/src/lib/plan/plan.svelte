@@ -15,10 +15,7 @@
 </script>
 
 <Collapsible.Root {...rest}>
-	<Card.Root
-		class={cn('flex flex-col border shadow-none ring-0', className)}
-		data-slot="plan"
-	>
+	<Card.Root class={cn('flex flex-col border shadow-none ring-0', className)} data-slot="plan">
 		{@render children?.()}
 	</Card.Root>
 </Collapsible.Root>

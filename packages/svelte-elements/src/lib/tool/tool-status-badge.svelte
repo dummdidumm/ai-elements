@@ -18,10 +18,7 @@
 		'output-error': 'Error'
 	};
 
-	const statusVariant: Record<
-		ToolPart['state'],
-		ComponentProps<typeof Badge>['variant']
-	> = {
+	const statusVariant: Record<ToolPart['state'], ComponentProps<typeof Badge>['variant']> = {
 		'approval-requested': 'outline',
 		'approval-responded': 'secondary',
 		'input-available': 'secondary',
@@ -39,10 +36,7 @@
 </script>
 
 <Badge
-	class={cn(
-		'gap-1.5 rounded-full font-medium [&>svg]:size-3',
-		className
-	)}
+	class={cn('gap-1.5 rounded-full font-medium [&>svg]:size-3', className)}
 	variant={statusVariant[status]}
 	data-slot="tool-status-badge"
 	{...rest}

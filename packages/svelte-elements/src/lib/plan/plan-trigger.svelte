@@ -12,10 +12,7 @@
 	{#snippet child({ props })}
 		<Button
 			{...props}
-			class={cn(
-				'shrink-0',
-				className
-			)}
+			class={cn('shrink-0', className)}
 			variant="ghost"
 			size="icon-sm"
 			data-slot="plan-trigger"

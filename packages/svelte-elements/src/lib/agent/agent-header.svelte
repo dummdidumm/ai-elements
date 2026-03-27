@@ -13,7 +13,7 @@
 	{...rest}
 >
 	<div class="flex items-center gap-2">
-		<BotIcon class="text-muted-foreground size-4" />
+		<BotIcon class="size-4 text-muted-foreground" />
 		<span class="text-sm font-medium">{name}</span>
 		{#if model}
 			<Badge

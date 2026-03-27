@@ -15,7 +15,7 @@
 </script>
 
 <Card.Description
-	class={cn('text-muted-foreground text-sm text-balance', className)}
+	class={cn('text-sm text-balance text-muted-foreground', className)}
 	data-slot="plan-description"
 	{...rest}
 >

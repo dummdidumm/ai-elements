@@ -7,8 +7,8 @@
 </script>
 
 <div class={cn('space-y-2 overflow-hidden', className)} data-slot="tool-input" {...rest}>
-	<h4 class="text-muted-foreground text-xs font-medium tracking-wide uppercase">Parameters</h4>
-	<div class="bg-muted/50 rounded-md">
+	<h4 class="text-xs font-medium tracking-wide text-muted-foreground uppercase">Parameters</h4>
+	<div class="rounded-md bg-muted/50">
 		<CodeBlock code={JSON.stringify(input, null, 2)} language="json" />
 	</div>
 </div>
