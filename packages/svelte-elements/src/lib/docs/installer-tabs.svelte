@@ -16,20 +16,24 @@
 		manualLanguage?: BundledLanguage;
 	} = $props();
 
-	const aiElementsCommand = `npx ai-elements@latest add ${slug}`;
-	const shadcnCommand = `npx shadcn@latest add @ai-elements/${slug}`;
-	const componentImportName = slug
-		.split('-')
-		.filter(Boolean)
-		.map((segment) => `${segment.at(0)?.toUpperCase() ?? ''}${segment.slice(1)}`)
-		.join('');
-	const defaultManualCode = [
-		'<script lang="ts">',
-		`\timport { ${componentImportName} } from '$lib/index.js';`,
-		'<\\/script>',
-		'',
-		`<${componentImportName} />`
-	].join('\n');
+	const aiElementsCommand = $derived(`npx ai-elements@latest add ${slug}`);
+	const shadcnCommand = $derived(`npx shadcn@latest add @ai-elements/${slug}`);
+	const componentImportName = $derived(
+		slug
+			.split('-')
+			.filter(Boolean)
+			.map((segment) => `${segment.at(0)?.toUpperCase() ?? ''}${segment.slice(1)}`)
+			.join('')
+	);
+	const defaultManualCode = $derived(
+		[
+			'<script lang="ts">',
+			`\timport { ${componentImportName} } from '$lib/index.js';`,
+			'<\\/script>',
+			'',
+			`<${componentImportName} />`
+		].join('\n')
+	);
 </script>
 
 <Tabs.Root class={cn('w-full gap-0 rounded-xl border', className)} value="ai-elements">
