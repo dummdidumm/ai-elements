@@ -1,5 +1,5 @@
-import { Accordion } from 'bits-ui';
 import type { Tool } from 'ai';
+import * as Accordion from '../components/ui/accordion/index.js';
 import type { ComponentProps } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 

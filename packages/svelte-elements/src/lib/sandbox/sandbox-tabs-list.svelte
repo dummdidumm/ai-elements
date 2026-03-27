@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Tabs } from 'bits-ui';
+	import * as Tabs from '../components/ui/tabs/index.js';
 	import type { SandboxTabsListProps } from './types.js';
 	import { cn } from '../utils.js';
 

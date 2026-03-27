@@ -3,7 +3,8 @@
 	import CircleIcon from 'lucide-svelte/icons/circle';
 	import ClockIcon from 'lucide-svelte/icons/clock';
 	import XCircleIcon from 'lucide-svelte/icons/x-circle';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { ComponentProps } from 'svelte';
+	import { Badge } from '../components/ui/badge/index.js';
 	import { cn } from '../utils.js';
 	import type { ToolPart } from './types.js';
 
@@ -17,18 +18,32 @@
 		'output-error': 'Error'
 	};
 
-	type Props = {
+	const statusVariant: Record<
+		ToolPart['state'],
+		ComponentProps<typeof Badge>['variant']
+	> = {
+		'approval-requested': 'outline',
+		'approval-responded': 'secondary',
+		'input-available': 'secondary',
+		'input-streaming': 'outline',
+		'output-available': 'default',
+		'output-denied': 'destructive',
+		'output-error': 'destructive'
+	};
+
+	type Props = Omit<ComponentProps<typeof Badge>, 'children' | 'variant'> & {
 		status: ToolPart['state'];
-	} & HTMLAttributes<HTMLSpanElement>;
+	};
 
 	let { status, class: className, ...rest }: Props = $props();
 </script>
 
-<span
+<Badge
 	class={cn(
-		'bg-secondary text-secondary-foreground inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] [&>svg]:pointer-events-none [&>svg]:size-3',
+		'gap-1.5 rounded-full font-medium [&>svg]:size-3',
 		className
 	)}
+	variant={statusVariant[status]}
 	data-slot="tool-status-badge"
 	{...rest}
 >
@@ -48,4 +63,4 @@
 		<XCircleIcon class="size-4 text-red-600" />
 	{/if}
 	{statusLabels[status]}
-</span>
+</Badge>

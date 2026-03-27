@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import DOMPurify from 'isomorphic-dompurify';
 	import { marked } from 'marked';
 	import type { ReasoningContentProps } from './types.js';

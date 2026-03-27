@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import BrainIcon from 'lucide-svelte/icons/brain';
 	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
 	import Shimmer from '../components/shimmer.svelte';

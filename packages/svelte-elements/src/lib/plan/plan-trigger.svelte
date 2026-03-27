@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import { Button } from '../components/ui/button/index.js';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import ChevronsUpDownIcon from 'lucide-svelte/icons/chevrons-up-down';
-	import type { ComponentProps } from 'svelte';
+	import type { PlanTriggerProps } from './types.js';
 	import { cn } from '../utils.js';
 
-	type Props = ComponentProps<typeof Collapsible.Trigger>;
-
-	let { class: className, children, ...rest }: Props = $props();
+	let { class: className, children, ...rest }: PlanTriggerProps = $props();
 </script>
 
 <Collapsible.Trigger {...rest}>
 	{#snippet child({ props })}
-		<button
-			type="button"
+		<Button
 			{...props}
 			class={cn(
-				'hover:bg-accent hover:text-accent-foreground inline-flex size-8 shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-4',
+				'shrink-0',
 				className
 			)}
+			variant="ghost"
+			size="icon-sm"
 			data-slot="plan-trigger"
 		>
 			{#if children}
@@ -26,6 +26,6 @@
 				<ChevronsUpDownIcon class="size-4" />
 				<span class="sr-only">Toggle plan</span>
 			{/if}
-		</button>
+		</Button>
 	{/snippet}
 </Collapsible.Trigger>

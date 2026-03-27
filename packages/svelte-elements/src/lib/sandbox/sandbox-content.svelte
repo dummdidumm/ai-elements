@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import type { SandboxContentProps } from './types.js';
 	import { cn } from '../utils.js';
 

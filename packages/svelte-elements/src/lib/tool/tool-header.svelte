@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
 	import WrenchIcon from 'lucide-svelte/icons/wrench';
 	import ToolStatusBadge from './tool-status-badge.svelte';

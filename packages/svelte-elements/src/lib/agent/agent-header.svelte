@@ -1,5 +1,6 @@
 <script lang="ts">
 	import BotIcon from 'lucide-svelte/icons/bot';
+	import { Badge } from '../components/ui/badge/index.js';
 	import type { AgentHeaderProps } from './types.js';
 	import { cn } from '../utils.js';
 
@@ -15,12 +16,13 @@
 		<BotIcon class="text-muted-foreground size-4" />
 		<span class="text-sm font-medium">{name}</span>
 		{#if model}
-			<span
-				class="bg-secondary text-secondary-foreground inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-transparent px-2 py-0.5 font-mono text-xs font-medium whitespace-nowrap transition-[color,box-shadow]"
+			<Badge
+				class="rounded-full font-mono text-xs"
 				data-slot="agent-model-badge"
+				variant="secondary"
 			>
 				{model}
-			</span>
+			</Badge>
 		{/if}
 	</div>
 	{@render children?.()}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import CodeIcon from 'lucide-svelte/icons/code';
 	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
 	import type { SandboxHeaderProps } from './types.js';

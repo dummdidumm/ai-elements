@@ -1,5 +1,6 @@
-import { Collapsible, Tabs } from 'bits-ui';
 import type { ToolUIPart } from 'ai';
+import * as Collapsible from '../components/ui/collapsible/index.js';
+import * as Tabs from '../components/ui/tabs/index.js';
 import type { ComponentProps } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 

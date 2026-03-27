@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
-	import type { ComponentProps } from 'svelte';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
+	import * as Card from '../components/ui/card/index.js';
+	import type { PlanProps } from './types.js';
 	import { setPlanContext } from './plan-context.js';
 	import { cn } from '../utils.js';
 
-	type Props = ComponentProps<typeof Collapsible.Root> & {
-		isStreaming?: boolean;
-	};
-
-	let { class: className, isStreaming = false, children, ...rest }: Props = $props();
+	let { class: className, isStreaming = false, children, ...rest }: PlanProps = $props();
 
 	const plan = $state({ isStreaming: false });
 	$effect(() => {
@@ -17,16 +14,11 @@
 	setPlanContext(plan);
 </script>
 
-<Collapsible.Root data-slot="plan" {...rest}>
-	{#snippet child({ props })}
-		<div
-			{...props}
-			class={cn(
-				'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-none',
-				className
-			)}
-		>
-			{@render children?.()}
-		</div>
-	{/snippet}
+<Collapsible.Root {...rest}>
+	<Card.Root
+		class={cn('flex flex-col border shadow-none ring-0', className)}
+		data-slot="plan"
+	>
+		{@render children?.()}
+	</Card.Root>
 </Collapsible.Root>

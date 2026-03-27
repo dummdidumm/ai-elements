@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Collapsible } from 'bits-ui';
+	import * as Collapsible from '../components/ui/collapsible/index.js';
 	import { setReasoningContext } from './reasoning-context.js';
 	import type { ReasoningContextValue } from './reasoning-context.js';
 	import type { ReasoningProps } from './types.js';

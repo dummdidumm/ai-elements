@@ -1,4 +1,5 @@
 <script lang="ts">
+	import * as Card from '../components/ui/card/index.js';
 	import type { Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import Shimmer from '../components/shimmer.svelte';
@@ -13,7 +14,7 @@
 	const { isStreaming } = usePlan();
 </script>
 
-<div
+<Card.Description
 	class={cn('text-muted-foreground text-sm text-balance', className)}
 	data-slot="plan-description"
 	{...rest}
@@ -23,4 +24,4 @@
 	{:else}
 		{@render children()}
 	{/if}
-</div>
+</Card.Description>

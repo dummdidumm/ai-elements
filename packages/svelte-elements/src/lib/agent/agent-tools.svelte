@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Accordion } from 'bits-ui';
+	import * as Accordion from '../components/ui/accordion/index.js';
 	import type { AgentToolsProps } from './types.js';
 	import { cn } from '../utils.js';
 

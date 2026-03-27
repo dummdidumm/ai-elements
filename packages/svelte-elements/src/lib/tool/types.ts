@@ -1,5 +1,5 @@
 import type { DynamicToolUIPart, ToolUIPart } from 'ai';
-import { Collapsible } from 'bits-ui';
+import * as Collapsible from '../components/ui/collapsible/index.js';
 import type { ComponentProps } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 
