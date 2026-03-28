@@ -34,18 +34,32 @@
 	</SandboxContent>
 </Sandbox>`;
 
-	const usageCode = `<Sandbox bind:open={isOpen}>
-	<SandboxHeader state="output-available" title="ci-run" />
+	const usageCode = `import { useObject } from '@ai-sdk/svelte';
+
+const sandbox = useObject({
+	api: '/api/generate-sandbox',
+	schema: SandboxSchema
+});
+
+<Sandbox open={sandbox.object?.state !== 'input-streaming'}>
+	<SandboxHeader
+		state={sandbox.object?.state ?? 'input-available'}
+		title={sandbox.object?.title ?? 'sandbox.ts'}
+	/>
 	<SandboxContent>
-		<SandboxTabs value="output">
+		<SandboxTabs value="code">
 			<SandboxTabsBar>
 				<SandboxTabsList>
 					<SandboxTabsTrigger value="code">Code</SandboxTabsTrigger>
 					<SandboxTabsTrigger value="output">Output</SandboxTabsTrigger>
 				</SandboxTabsList>
 			</SandboxTabsBar>
-			<SandboxTabContent value="code"><CodeBlock code="npm run test" language="bash" /></SandboxTabContent>
-			<SandboxTabContent value="output"><CodeBlock code="2 passed" language="log" /></SandboxTabContent>
+			<SandboxTabContent value="code">
+				<CodeBlock code={sandbox.object?.code ?? ''} language="ts" />
+			</SandboxTabContent>
+			<SandboxTabContent value="output">
+				<CodeBlock code={sandbox.object?.output ?? ''} language="log" />
+			</SandboxTabContent>
 		</SandboxTabs>
 	</SandboxContent>
 </Sandbox>`;
@@ -104,16 +118,6 @@
 	title="Sandbox"
 	description="Display generated code and runtime output in a collapsible, tabbed container."
 >
-	<DocsSection
-		title="Intro"
-		description="Sandbox mirrors the original AI code execution layout with status badges, collapsible sections, and code/output tabs."
-	>
-		<p class="text-sm text-muted-foreground">
-			Pair it with CodeBlock, StackTrace, and tool state data to build notebook-like or CI-like
-			execution experiences.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="A sandbox showing code and output panels.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[320px] items-start">
 			{#snippet preview()}
@@ -155,32 +159,8 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Wire sandbox views to generated code and execution logs.">
-		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[320px] items-start">
-			{#snippet preview()}
-				<div class="w-full max-w-3xl">
-					<Sandbox>
-						<SandboxHeader state="output-available" title="ci-run" />
-						<SandboxContent>
-							<SandboxTabs value="output">
-								<SandboxTabsBar>
-									<SandboxTabsList>
-										<SandboxTabsTrigger value="code">Code</SandboxTabsTrigger>
-										<SandboxTabsTrigger value="output">Output</SandboxTabsTrigger>
-									</SandboxTabsList>
-								</SandboxTabsBar>
-								<SandboxTabContent value="code">
-									<CodeBlock code={'npm run test'} language="bash" />
-								</SandboxTabContent>
-								<SandboxTabContent value="output">
-									<CodeBlock code={'2 passed'} language="log" />
-								</SandboxTabContent>
-							</SandboxTabs>
-						</SandboxContent>
-					</Sandbox>
-				</div>
-			{/snippet}
-		</PreviewCodeTabs>
+	<DocsSection title="Usage with AI SDK" description="Drive code and output tabs from generated tool state.">
+		<CodeBlock code={usageCode} language="tsx" />
 	</DocsSection>
 
 	<DocsSection title="Props" description="Core sandbox primitives and their props.">

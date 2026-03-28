@@ -82,7 +82,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render generated artifacts with custom sections.">
+	<DocsSection title="Examples" description="Render generated artifacts with custom sections.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

@@ -55,6 +55,16 @@
 		</CodeBlockActions>
 	</CodeBlockHeader>
 </CodeBlock>`;
+	const examplesCode = `<CodeBlock code={'npm run check\\n✓ typecheck passed\\n✓ tests passed'} language="bash">
+	<CodeBlockHeader>
+		<CodeBlockTitle>
+			<CodeBlockFilename>ci.log</CodeBlockFilename>
+		</CodeBlockTitle>
+		<CodeBlockActions>
+			<CodeBlockCopyButton />
+		</CodeBlockActions>
+	</CodeBlockHeader>
+</CodeBlock>`;
 
 	const propsRows = [
 		{
@@ -114,6 +124,10 @@
 		<InstallerTabs slug="code-block" />
 	</DocsSection>
 
+	<DocsSection title="Usage" description="Compose CodeBlock primitives in app code.">
+		<CodeBlock code={usageCode} language="svelte" />
+	</DocsSection>
+
 	<DocsSection title="Features" description="CodeBlock capabilities.">
 		<ul class="list-disc space-y-1 pl-5 text-sm">
 			<li>Shiki-powered syntax highlighting.</li>
@@ -123,8 +137,8 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Compose CodeBlock primitives in app code.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Examples" description="Render logs and command snippets with the same primitive.">
+		<CodeBlock code={examplesCode} language="svelte" />
 	</DocsSection>
 
 	<DocsSection title="Props" description="Common CodeBlock props.">

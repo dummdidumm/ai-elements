@@ -83,6 +83,42 @@
 		</ul>
 	</DocsSection>
 
+	<DocsSection title="File Status" description="Common counts shown with commit summaries.">
+		<div class="overflow-x-auto rounded-md border">
+			<table class="w-full text-left text-sm">
+				<thead class="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
+					<tr>
+						<th class="px-3 py-2 font-medium">Status</th>
+						<th class="px-3 py-2 font-medium">Label</th>
+						<th class="px-3 py-2 font-medium">Color</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">added</td>
+						<td class="px-3 py-2">A</td>
+						<td class="px-3 py-2">green</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">modified</td>
+						<td class="px-3 py-2">M</td>
+						<td class="px-3 py-2">amber</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">removed</td>
+						<td class="px-3 py-2">D</td>
+						<td class="px-3 py-2">red</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">renamed</td>
+						<td class="px-3 py-2">R</td>
+						<td class="px-3 py-2">blue</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</DocsSection>
+
 	<DocsSection title="Usage" description="Render commit cards from git event data.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>

@@ -16,7 +16,7 @@
 	} = $props();
 </script>
 
-<section class={cn('space-y-5', className)}>
+<section class={cn('space-y-4', className)}>
 	<div class="space-y-2">
 		<h2 class="text-2xl font-semibold tracking-tight md:text-[1.65rem]">{title}</h2>
 		{#if description}
@@ -24,7 +24,7 @@
 		{/if}
 	</div>
 	<Separator class="bg-border/80" />
-	<div class="space-y-4">
+	<div class="space-y-3">
 		{@render children?.()}
 	</div>
 </section>

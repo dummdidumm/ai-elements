@@ -99,6 +99,10 @@
 		<InstallerTabs slug="agent" />
 	</DocsSection>
 
+	<DocsSection title="Usage with AI SDK" description="Render agent metadata from runtime tool context.">
+		<CodeBlock code={usageCode} language="svelte" />
+	</DocsSection>
+
 	<DocsSection title="Features" description="Agent component capabilities.">
 		<ul class="list-disc space-y-1 pl-5 text-sm">
 			<li>Header with agent identity and model badge.</li>
@@ -106,10 +110,6 @@
 			<li>Typed output schema display with syntax highlighting.</li>
 			<li>Composable structure for tools, output, and custom sections.</li>
 		</ul>
-	</DocsSection>
-
-	<DocsSection title="Usage" description="Render agent metadata from runtime config.">
-		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 
 	<DocsSection title="Props" description="Core props used by Agent primitives.">

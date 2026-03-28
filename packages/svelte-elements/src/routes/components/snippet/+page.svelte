@@ -13,7 +13,7 @@
 	<code class="flex-1 px-3 py-2 text-xs">pnpm add @repo/ai-elements</code>
 	<button class="border-l px-3 py-2 text-xs" type="button">Copy</button>
 </Snippet>`;
-	const usageCode = `<Snippet class="w-full max-w-xl">
+	const exampleCode = `<Snippet class="w-full max-w-xl">
 	<code class="flex-1 px-3 py-2 text-xs">npm run test -- --watch</code>
 	<button class="border-l px-3 py-2 text-xs" type="button">Copy</button>
 </Snippet>`;
@@ -37,16 +37,6 @@
 	title="Snippet"
 	description="Render short commands and inline code references with compact layout control."
 >
-	<DocsSection
-		title="Intro"
-		description="Snippet is ideal for short, copy-friendly command lines and token-sized code references in docs and chat UIs."
-	>
-		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="A terminal-style command snippet with a copy action.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
@@ -72,8 +62,8 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Build prefixed or plain snippets using custom children.">
-		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+	<DocsSection title="Examples" description="Build prefixed or plain snippets using custom children.">
+		<PreviewCodeTabs code={exampleCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Snippet class="w-full max-w-xl">
 					<code class="flex-1 px-3 py-2 text-xs">npm run test -- --watch</code>

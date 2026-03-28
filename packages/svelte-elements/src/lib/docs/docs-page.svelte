@@ -18,7 +18,7 @@
 </script>
 
 <div
-	class={cn('mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-8 md:px-8 md:py-10', className)}
+	class={cn('mx-auto flex w-full max-w-5xl flex-col gap-9 px-6 py-8 md:px-8 md:py-10', className)}
 >
 	<header class="flex flex-wrap items-start justify-between gap-5">
 		<div class="space-y-3">
@@ -35,7 +35,7 @@
 			</div>
 		{/if}
 	</header>
-	<div class="space-y-10">
+	<div class="space-y-9">
 		{@render children?.()}
 	</div>
 </div>

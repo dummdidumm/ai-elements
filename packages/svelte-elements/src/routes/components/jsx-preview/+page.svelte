@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { JSXPreview } from '$lib/index.js';
+	import { CodeBlock, JSXPreview } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -14,10 +14,29 @@
 		<p class="text-muted-foreground">This preview uses slotted Svelte content.</p>
 	</div>
 </JSXPreview>`;
-	const usageCode = `<JSXPreview class="w-full max-w-xl space-y-2 p-4">
-	<h3 class="text-sm font-semibold">Build status</h3>
-	<p class="text-xs text-muted-foreground">Streaming UI tokens...</p>
-	<div class="rounded-md border p-3 text-sm">Ready for custom layout content.</div>
+	const aiSdkCode = `import { streamText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
+
+const result = streamText({
+	model: anthropic('claude-sonnet-4-5'),
+	messages
+});
+
+<JSXPreview class="w-full max-w-xl p-4">
+	{#if result}
+		{@html result}
+	{:else}
+		<p class="text-xs text-muted-foreground">Generating preview…</p>
+	{/if}
+</JSXPreview>`;
+	const customComponentsCode = `<JSXPreview class="w-full max-w-xl p-4">
+	<div class="space-y-2 rounded-md border bg-muted/30 p-3 text-sm">
+		<p class="font-medium">Build status</p>
+		<p class="text-muted-foreground">Streaming UI tokens...</p>
+		<button class="w-fit rounded bg-primary px-2 py-1 text-xs text-primary-foreground" type="button">
+			Open app
+		</button>
+	</div>
 </JSXPreview>`;
 
 	const propsRows = [
@@ -39,16 +58,6 @@
 	title="JSX Preview"
 	description="Preview JSX-like generated interfaces with a slot-based Svelte wrapper."
 >
-	<DocsSection
-		title="Intro"
-		description="JSXPreview provides the same docs role as the original React component, but uses Svelte slot composition instead of runtime JSX parsing."
-	>
-		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="A generated UI card rendered inside JSXPreview.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
@@ -68,26 +77,19 @@
 
 	<DocsSection title="Features" description="Key capabilities.">
 		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
-			<li>Lightweight container with predictable slot rendering.</li>
-			<li>Matches generated UI use cases from the original docs workflow.</li>
-			<li>Supports custom classes and all standard div attributes.</li>
-			<li>Works well alongside code and output panes in assistant UIs.</li>
+			<li>Renders JSX-like generated content in a stable container.</li>
+			<li>Fits streaming output and incremental UI updates.</li>
+			<li>Composable structure for custom cards and controls.</li>
+			<li>Works well with code and output surfaces in assistant interfaces.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection
-		title="Usage"
-		description="Compose JSXPreview around generated content and streaming indicators."
-	>
-		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
-			{#snippet preview()}
-				<JSXPreview class="w-full max-w-xl space-y-2 p-4">
-					<h3 class="text-sm font-semibold">Build status</h3>
-					<p class="text-xs text-muted-foreground">Streaming UI tokens...</p>
-					<div class="rounded-md border p-3 text-sm">Ready for custom layout content.</div>
-				</JSXPreview>
-			{/snippet}
-		</PreviewCodeTabs>
+	<DocsSection title="Usage with AI SDK" description="Render generated UI from a streaming model result.">
+		<CodeBlock code={aiSdkCode} language="tsx" />
+	</DocsSection>
+
+	<DocsSection title="With Custom Components" description="Wrap generated output in local UI shells.">
+		<CodeBlock code={customComponentsCode} language="svelte" />
 	</DocsSection>
 
 	<DocsSection title="Props" description="API reference for JSX Preview.">

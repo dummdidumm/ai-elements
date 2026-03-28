@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Terminal } from '$lib/index.js';
+	import { CodeBlock, Terminal } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -14,7 +14,7 @@
 ✓ typecheck passed
 ✓ lint passed</pre>
             </Terminal>`;
-	const usageCode = `            <Terminal class="w-full max-w-3xl">
+	const exampleCode = `            <Terminal class="w-full max-w-3xl">
             	<div class="flex items-center justify-between border-b px-4 py-2 text-xs text-zinc-400">
             		<span>tests</span>
             		<span class="text-emerald-300">streaming</span>
@@ -22,6 +22,15 @@
             	<pre class="overflow-x-auto px-4 py-3 text-xs text-zinc-100">$ pnpm test
 ✓ 26 passed</pre>
             </Terminal>`;
+	const ansiCode = `import AnsiToHtml from 'ansi-to-html';
+
+const converter = new AnsiToHtml();
+const html = converter.toHtml(rawAnsiLog);
+
+<Terminal class="w-full max-w-3xl">
+	<div class="border-b px-4 py-2 text-xs text-zinc-400">build logs</div>
+	<pre class="overflow-x-auto px-4 py-3 text-xs text-zinc-100">{html}</pre>
+</Terminal>`;
 
 	const propsRows = [
 		{ name: 'class', type: 'string', description: 'Custom classes for the component container.' },
@@ -42,16 +51,6 @@
 	title="Terminal"
 	description="Display command output streams in a dark terminal-style panel."
 >
-	<DocsSection
-		title="Intro"
-		description="Terminal provides the same docs-level terminal container concept, optimized for composable command output and log sections."
-	>
-		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="A terminal panel with command output.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
@@ -78,8 +77,12 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render build/test output with optional status metadata.">
-		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+	<DocsSection title="ANSI Support" description="Convert ANSI output to HTML before rendering.">
+		<CodeBlock code={ansiCode} language="tsx" />
+	</DocsSection>
+
+	<DocsSection title="Examples" description="Render build/test output with optional status metadata.">
+		<PreviewCodeTabs code={exampleCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Terminal class="w-full max-w-3xl">
 					<div class="flex items-center justify-between border-b px-4 py-2 text-xs text-zinc-400">

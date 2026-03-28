@@ -24,6 +24,13 @@
 		<div class={row.indentClass}>{row.label}</div>
 	{/each}
 </FileTree>`;
+	const expandedCode = `<FileTree class="space-y-1 p-3 text-xs">
+	<div>src/</div>
+	<div class="pl-3">components/</div>
+	<div class="pl-6">ui/</div>
+	<div class="pl-9">button.svelte</div>
+	<div class="pl-9">tabs.svelte</div>
+</FileTree>`;
 
 	const propsRows = [
 		{
@@ -78,8 +85,12 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Map file rows from runtime tree data.">
+	<DocsSection title="Examples" description="Map file rows from runtime tree data.">
 		<CodeBlock code={usageCode} language="svelte" />
+	</DocsSection>
+
+	<DocsSection title="Default Expanded" description="Render a pre-expanded tree structure.">
+		<CodeBlock code={expandedCode} language="svelte" />
 	</DocsSection>
 
 	<DocsSection title="Props" description="FileTree props and forwarded attributes.">

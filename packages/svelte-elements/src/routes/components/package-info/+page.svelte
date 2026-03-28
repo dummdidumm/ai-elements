@@ -15,7 +15,7 @@
 	</div>
 	<p class="text-xs text-muted-foreground">2.4.1 → 2.5.0</p>
 </PackageInfo>`;
-	const usageCode = `<PackageInfo class="w-full max-w-xl space-y-3 p-4">
+	const dependenciesCode = `<PackageInfo class="w-full max-w-xl space-y-3 p-4">
 	<div class="flex items-center justify-between">
 		<p class="font-mono text-sm">@repo/ai-core</p>
 		<span class="rounded-full border bg-amber-100 px-2 py-0.5 text-xs text-amber-900">minor</span>
@@ -45,16 +45,6 @@
 	title="Package Info"
 	description="Display package upgrade metadata, change badges, and dependency details."
 >
-	<DocsSection
-		title="Intro"
-		description="PackageInfo mirrors the original docs concept for dependency diffs while keeping composition fully in your Svelte markup."
-	>
-		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="A package update card with version and change type.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
@@ -84,8 +74,8 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render dependency rows inside the PackageInfo container.">
-		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+	<DocsSection title="Dependencies" description="Render dependency rows inside the package card.">
+		<PreviewCodeTabs code={dependenciesCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<PackageInfo class="w-full max-w-xl space-y-3 p-4">
 					<div class="flex items-center justify-between">
@@ -101,6 +91,47 @@
 				</PackageInfo>
 			{/snippet}
 		</PreviewCodeTabs>
+	</DocsSection>
+
+	<DocsSection title="Change Types" description="Suggested badge colors for dependency updates.">
+		<div class="overflow-x-auto rounded-md border">
+			<table class="w-full text-left text-sm">
+				<thead class="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
+					<tr>
+						<th class="px-3 py-2 font-medium">Type</th>
+						<th class="px-3 py-2 font-medium">Badge</th>
+						<th class="px-3 py-2 font-medium">Use case</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">major</td>
+						<td class="px-3 py-2">red</td>
+						<td class="px-3 py-2">Breaking changes</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">minor</td>
+						<td class="px-3 py-2">amber</td>
+						<td class="px-3 py-2">New features</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">patch</td>
+						<td class="px-3 py-2">green</td>
+						<td class="px-3 py-2">Bug fixes</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">added</td>
+						<td class="px-3 py-2">blue</td>
+						<td class="px-3 py-2">New dependency</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">removed</td>
+						<td class="px-3 py-2">gray</td>
+						<td class="px-3 py-2">Removed dependency</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</DocsSection>
 
 	<DocsSection title="Props" description="API reference for Package Info.">

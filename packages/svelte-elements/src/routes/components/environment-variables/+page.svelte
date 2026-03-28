@@ -90,6 +90,15 @@
 		</ul>
 	</DocsSection>
 
+	<DocsSection title="Visibility and Copy Modes" description="Common controls for secrets handling.">
+		<ul class="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+			<li>Mask sensitive values by default and reveal on demand.</li>
+			<li>Support single-row copy buttons for targeted troubleshooting.</li>
+			<li>Add export toggles for <code>.env</code> or <code>.env.local</code> output.</li>
+			<li>Show required-variable badges for setup workflows.</li>
+		</ul>
+	</DocsSection>
+
 	<DocsSection title="Usage" description="Render environment entries from data arrays.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>

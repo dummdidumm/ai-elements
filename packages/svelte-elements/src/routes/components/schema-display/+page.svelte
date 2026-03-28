@@ -50,16 +50,6 @@
 	title="Schema Display"
 	description="Show endpoint metadata, parameters, and request/response schemas in a structured panel."
 >
-	<DocsSection
-		title="Intro"
-		description="SchemaDisplay is a composable shell for API docs, matching the original documentation intent while keeping rendering fully customizable."
-	>
-		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
-		</p>
-	</DocsSection>
-
 	<DocsSection title="Preview" description="An endpoint summary with method and path.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
@@ -89,10 +79,43 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection
-		title="Usage"
-		description="Compose parameter and response sections directly in markup."
-	>
+	<DocsSection title="Method Colors" description="Recommended colors for common HTTP methods.">
+		<div class="overflow-x-auto rounded-md border">
+			<table class="w-full text-left text-sm">
+				<thead class="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
+					<tr>
+						<th class="px-3 py-2 font-medium">Method</th>
+						<th class="px-3 py-2 font-medium">Color</th>
+						<th class="px-3 py-2 font-medium">Intent</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">GET</td>
+						<td class="px-3 py-2">green</td>
+						<td class="px-3 py-2">Read</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">POST</td>
+						<td class="px-3 py-2">blue</td>
+						<td class="px-3 py-2">Create</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">PUT</td>
+						<td class="px-3 py-2">amber</td>
+						<td class="px-3 py-2">Update</td>
+					</tr>
+					<tr class="border-t">
+						<td class="px-3 py-2 font-mono text-xs">DELETE</td>
+						<td class="px-3 py-2">red</td>
+						<td class="px-3 py-2">Remove</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</DocsSection>
+
+	<DocsSection title="Examples" description="Compose parameter and response sections directly in markup.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<SchemaDisplay class="w-full max-w-2xl space-y-4 p-4">
