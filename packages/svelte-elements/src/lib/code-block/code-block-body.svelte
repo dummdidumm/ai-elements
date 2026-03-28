@@ -35,6 +35,18 @@
 				return `<span class="dark:!bg-[var(--shiki-dark-bg)] dark:!text-[var(--shiki-dark)]" style="${style}">${content}</span>`;
 			})
 			.join('');
+
+	const renderCodeHtml = (
+		lines: typeof keyedLines,
+		withLineNumbers: boolean
+	): string =>
+		lines
+			.map((line) => {
+				const classes = withLineNumbers ? LINE_NUMBER_CLASSES : 'block';
+				const content = line.tokens.length === 0 ? '\n' : renderLineTokens(line);
+				return `<span class="${escapeHtml(classes)}">${content}</span>`;
+			})
+			.join('');
 </script>
 
 <pre
@@ -49,14 +61,6 @@
 			'font-mono text-sm',
 			showLineNumbers && '[counter-increment:line_0] [counter-reset:line]'
 		)}>
-		{#each keyedLines as keyedLine (keyedLine.key)}
-			<span class={showLineNumbers ? LINE_NUMBER_CLASSES : 'block'}>
-				{#if keyedLine.tokens.length === 0}
-					{'\n'}
-				{:else}
-					{@html renderLineTokens(keyedLine)}
-				{/if}
-			</span>
-		{/each}
+		{@html renderCodeHtml(keyedLines, showLineNumbers)}
 	</code>
 </pre>
