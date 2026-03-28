@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Canvas, CodeBlock } from '$lib/index.js';
+	import { Canvas } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -21,7 +21,7 @@
 	<!-- Render nodes, edges, overlays, and controls -->
 </Canvas>`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -50,16 +50,18 @@
 	title="Canvas"
 	description="Create a bounded surface for workflow and node-based interfaces."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Canvas offers the visual container for building graph-like and flow editing experiences.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Canvas provides the bounded surface that anchors workflow and graph interfaces."
+	>
+		<p class="text-sm text-muted-foreground">
+			Compose nodes, edges, overlays, and controls inside a single clipped area with consistent
+			styling.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Canvas in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A simple workflow surface placeholder.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Canvas class="p-4">
 					<div
@@ -72,26 +74,33 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Canvas to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Canvas.">
 		<InstallerTabs slug="canvas" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Canvas component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Styled container with minimum height for diagramming interfaces.</li>
 			<li>Handles overflow and rounding to keep graph content neatly clipped.</li>
 			<li>Composable with nodes, edges, controls, and side panels.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Canvas.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Use Canvas as the root layer for flow content.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Canvas class="min-h-80 p-3">
+					<div
+						class="grid h-full place-items-center rounded-md border border-dashed text-sm text-muted-foreground"
+					>
+						Nodes, edges, overlays, and controls
+					</div>
+				</Canvas>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Canvas component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Canvas.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

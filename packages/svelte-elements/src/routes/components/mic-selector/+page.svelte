@@ -38,11 +38,11 @@
 >
 	<DocsSection
 		title="Intro"
-		description="MicSelector mirrors the original selection UX concept with a composable shell for current device display and actions."
+		description="MicSelector provides a composable shell for current-device labels and selection actions."
 	>
 		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
+			Pair it with popovers, command menus, or system-device listings to create polished voice input
+			controls.
 		</p>
 	</DocsSection>
 
@@ -61,7 +61,7 @@
 		<InstallerTabs slug="mic-selector" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Key capabilities.">
+	<DocsSection title="Features" description="Common usage patterns.">
 		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Inline shell for selected microphone labels and actions.</li>
 			<li>Works with controlled and uncontrolled device state in app logic.</li>
@@ -70,7 +70,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render the active input and provide a change action.">
+	<DocsSection title="Usage and API" description="Render the active input and provide a change action.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<MicSelector class="w-full max-w-sm justify-between px-2 py-1.5">
@@ -81,7 +81,7 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="API reference for Mic Selector.">
+	<DocsSection title="Props" description="Primary props for MicSelector.">
 		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

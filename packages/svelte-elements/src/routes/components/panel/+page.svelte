@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Panel, CodeBlock } from '$lib/index.js';
+	import { Panel } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -22,7 +22,7 @@
 	<div class="p-4">Panel content</div>
 </Panel>`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -48,16 +48,17 @@
 </script>
 
 <DocsPage title="Panel" description="Present contextual workflow information in a framed panel.">
-	<p class="text-sm leading-6 text-muted-foreground">
-		Panel wraps auxiliary content such as inspectors, details, and settings beside your canvas.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Panel wraps contextual content such as inspectors, settings, and details."
+	>
+		<p class="text-sm text-muted-foreground">
+			Place it next to your canvas to expose node configuration and workflow metadata.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Panel in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A sidebar-style panel for selected node details.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Panel class="w-full max-w-sm">
 					<div class="p-3">
@@ -69,26 +70,29 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Panel to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Panel.">
 		<InstallerTabs slug="panel" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Panel component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Framed panel primitive suited for inspectors and sidebars.</li>
 			<li>Preserves child content structure without opinionated internal layout.</li>
 			<li>Pairs well with canvas and toolbar components in workflow pages.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Panel.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Use Panel for focused side content and metadata.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Panel class="w-80">
+					<div class="p-4">Panel content</div>
+				</Panel>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Panel component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Panel.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

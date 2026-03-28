@@ -5,7 +5,6 @@
 	let { class: className, children, ...rest }: SVGAttributes<SVGSVGElement> = $props();
 </script>
 
-/* React Flow connection-line integration is simplified to a static SVG primitive in Svelte. */
 <svg
 	class={cn('text-ring h-16 w-full', className)}
 	data-slot="connection"

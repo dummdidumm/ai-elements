@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Image, CodeBlock } from '$lib/index.js';
+	import { Image } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -23,7 +23,7 @@ const base64 = '...';
 
 <Image alt="Generated result" {base64} {mediaType} class="w-full rounded-md" />`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'base64',
 			type: 'string',
@@ -63,16 +63,17 @@ const base64 = '...';
 </script>
 
 <DocsPage title="Image" description="Display generated or uploaded media from base64 payloads.">
-	<p class="text-sm leading-6 text-muted-foreground">
-		Image converts a base64 payload and media type into a renderable data URL image element.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Image converts base64 payloads into renderable media for AI-generated outputs."
+	>
+		<p class="text-sm text-muted-foreground">
+			Use it for generated images, attachment previews, and inline visual responses in chat UIs.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Image in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A generated image rendered from a base64 payload.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Image
 					alt="Generated sample"
@@ -84,26 +85,27 @@ const base64 = '...';
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Image to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Image.">
 		<InstallerTabs slug="image" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Image component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Renders inlined image data without additional network requests.</li>
 			<li>Useful for model-generated images returned as base64 payloads.</li>
 			<li>Supports standard img attributes like alt, width, and height.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Image.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Provide mediaType and base64 for any renderable image.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Image alt="Generated result" base64={transparentPixel} mediaType="image/png" class="w-40 border" />
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Image component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Image.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

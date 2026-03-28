@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { OpenInChat, CodeBlock } from '$lib/index.js';
+	import { OpenInChat } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -21,7 +21,7 @@
 	<button type="button">Open</button>
 </OpenInChat>`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -50,16 +50,17 @@
 	title="Open in Chat"
 	description="Render a compact callout for jumping users into chat workflows."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Open in Chat provides a simple container for contextual links and actions that continue in chat.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="OpenInChat is a compact handoff container for transitioning users into chat."
+	>
+		<p class="text-sm text-muted-foreground">
+			Place supporting text and a clear action so users can continue context in a conversation flow.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Open in Chat in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A simple handoff row with supporting copy and action.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<OpenInChat>
 					<span>Need more help?</span>
@@ -71,26 +72,30 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Open in Chat to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Open in Chat.">
 		<InstallerTabs slug="open-in-chat" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Open in Chat component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Compact inline layout for chat handoff moments.</li>
 			<li>Accepts arbitrary children including links and action buttons.</li>
 			<li>Matches other utility primitives with shared surface styles.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Open in Chat.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Render custom handoff content for different journeys.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<OpenInChat>
+					<span>Continue this flow in chat.</span>
+					<button class="rounded border px-2 py-1 text-xs" type="button">Open</button>
+				</OpenInChat>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Open in Chat component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for OpenInChat.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

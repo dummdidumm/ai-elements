@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Transcription, CodeBlock } from '$lib/index.js';
+	import { Transcription } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -33,7 +33,7 @@ const handleSeek = (time: number) => {
 
 <Transcription {segments} currentTime={0.8} onSeek={handleSeek} />`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'segments',
 			type: '{ text: string; startSecond: number; endSecond: number }[]',
@@ -76,43 +76,51 @@ const handleSeek = (time: number) => {
 	title="Transcription"
 	description="Render live or completed speech-to-text segments with timeline awareness."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Transcription maps speech segments to readable text and can highlight playback progress as audio
-		advances.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Transcription maps timestamped segments to readable, interactive transcript text."
+	>
+		<p class="text-sm text-muted-foreground">
+			Use segment highlighting and seek callbacks to synchronize transcript reading with audio
+			playback.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Transcription in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A transcript with active-segment highlighting.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Transcription {segments} currentTime={1.7} />
 			{/snippet}
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Transcription to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Transcription.">
 		<InstallerTabs slug="transcription" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Transcription component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Renders each transcription segment with active and completed visual states.</li>
 			<li>Optional seek callback lets users jump audio playback by clicking transcript words.</li>
 			<li>Supports custom children rendering when you need a fully custom transcript layout.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Transcription.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Provide onSeek to make transcript text clickable.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Transcription
+					segments={[
+						{ text: 'Start recording', startSecond: 0, endSecond: 1.1 },
+						{ text: 'Generate a summary', startSecond: 1.1, endSecond: 3.2 }
+					]}
+					currentTime={0.8}
+				/>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Transcription component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Transcription.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

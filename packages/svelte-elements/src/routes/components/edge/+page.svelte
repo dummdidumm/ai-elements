@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Edge, CodeBlock } from '$lib/index.js';
+	import { Edge } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -15,7 +15,7 @@
 
 <Edge class="text-primary" aria-label="Workflow edge" />`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -41,42 +41,44 @@
 </script>
 
 <DocsPage title="Edge" description="Render a graph edge primitive for node relationships.">
-	<p class="text-sm leading-6 text-muted-foreground">
-		Edge is an SVG primitive that draws a smooth curved path between nodes in workflow UIs.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Edge is an SVG primitive for drawing path-based relationships between nodes."
+	>
+		<p class="text-sm text-muted-foreground">
+			Use it as a baseline visual edge or extend it with custom markers and overlays.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Edge in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A simple curved edge for graph relationships.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Edge aria-label="Example edge" />
 			{/snippet}
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Edge to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Edge.">
 		<InstallerTabs slug="edge" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Edge component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Simple SVG edge primitive for graph and flow diagrams.</li>
 			<li>Easy to restyle with utility classes and standard SVG attributes.</li>
 			<li>Supports optional children for overlays or markers.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Edge.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Apply classes to theme edges for active paths.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Edge aria-label="Workflow edge" class="text-primary" />
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Edge component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Edge.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

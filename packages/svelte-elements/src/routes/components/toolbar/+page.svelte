@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Toolbar, CodeBlock } from '$lib/index.js';
+	import { Toolbar } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -22,7 +22,7 @@
 	<button type="button">Redo</button>
 </Toolbar>`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -51,16 +51,17 @@
 	title="Toolbar"
 	description="Arrange frequently used workflow actions in a lightweight command row."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Toolbar gives you an inline row for quick actions such as add, duplicate, and publish.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Toolbar provides an inline command row for frequently used workflow actions."
+	>
+		<p class="text-sm text-muted-foreground">
+			Compose it with buttons, menu triggers, and segmented controls for canvas-level operations.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Toolbar in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A compact toolbar for common workflow actions.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Toolbar>
 					<button class="rounded px-2 py-1 text-xs" type="button">Add</button>
@@ -71,26 +72,30 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Toolbar to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Toolbar.">
 		<InstallerTabs slug="toolbar" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Toolbar component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Horizontal toolbar primitive with spacing and border defaults.</li>
 			<li>Composable with icon buttons, dropdown triggers, and segmented controls.</li>
 			<li>Supports standard div attributes for layout placement.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Toolbar.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Build focused command sets for canvas editing.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Toolbar>
+					<button class="rounded border px-2 py-1 text-xs" type="button">Undo</button>
+					<button class="rounded border px-2 py-1 text-xs" type="button">Redo</button>
+				</Toolbar>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Toolbar component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Toolbar.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

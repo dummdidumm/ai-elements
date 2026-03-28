@@ -5,8 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-/* Command/dialog wiring from the React version is intentionally simplified for Svelte baseline
-parity. */
 <div
 	class={cn('bg-background w-full rounded-md border', className)}
 	data-slot="voice-selector"

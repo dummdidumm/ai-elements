@@ -5,7 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-/* Media device enumeration popover is intentionally simplified for Svelte baseline parity. */
 <div
 	class={cn('bg-background inline-flex items-center gap-2 rounded-md border p-1', className)}
 	data-slot="mic-selector"

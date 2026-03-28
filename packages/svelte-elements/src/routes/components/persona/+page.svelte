@@ -39,11 +39,11 @@
 >
 	<DocsSection
 		title="Intro"
-		description="Persona mirrors the original conversational-avatar role with a lightweight Svelte visual placeholder container."
+		description="Persona provides a compact visual primitive for assistant identity and voice state."
 	>
 		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
+			Use it in headers, voice controls, and status rows to communicate listening, thinking, or
+			speaking states.
 		</p>
 	</DocsSection>
 
@@ -61,7 +61,7 @@
 		<InstallerTabs slug="persona" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Key capabilities.">
+	<DocsSection title="Features" description="Common usage patterns.">
 		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Compact circular visual for AI identity or state.</li>
 			<li>Easy to theme for multiple variants and design systems.</li>
@@ -70,7 +70,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render multiple persona states side-by-side.">
+	<DocsSection title="Usage and API" description="Render multiple persona states side-by-side.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<div class="flex gap-3">
@@ -89,7 +89,7 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="API reference for Persona.">
+	<DocsSection title="Props" description="Primary props for Persona.">
 		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

@@ -41,11 +41,11 @@
 >
 	<DocsSection
 		title="Intro"
-		description="AudioPlayer provides a baseline composable container for voice controls, mirroring the original docs use cases in a lightweight Svelte form."
+		description="AudioPlayer provides a composable shell for playback controls, timeline content, and metadata."
 	>
 		<p class="text-sm text-muted-foreground">
-			This page mirrors the original docs composition with shared Svelte docs primitives and
-			practical example snippets.
+			Use it for inline chat playback, spoken answer cards, or compact media controls in assistant
+			surfaces.
 		</p>
 	</DocsSection>
 
@@ -67,7 +67,7 @@
 		<InstallerTabs slug="audio-player" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Key capabilities.">
+	<DocsSection title="Features" description="Common usage patterns.">
 		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Composable playback controls for generated voice output.</li>
 			<li>Supports timeline, duration, and metadata rows.</li>
@@ -77,7 +77,7 @@
 	</DocsSection>
 
 	<DocsSection
-		title="Usage"
+		title="Usage and API"
 		description="Compose seek controls and metadata around playback state."
 	>
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
@@ -92,7 +92,7 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="API reference for Audio Player.">
+	<DocsSection title="Props" description="Primary props for AudioPlayer.">
 		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Connection, CodeBlock } from '$lib/index.js';
+	import { Connection } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -15,7 +15,7 @@
 
 <Connection class="text-primary" aria-label="Node connection" />`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -44,43 +44,44 @@
 	title="Connection"
 	description="Display a visual connection line between workflow points."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Connection renders a lightweight SVG connector that can be used in previews or custom graph
-		tooling.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Connection renders a lightweight SVG connector for workflow and graph interfaces."
+	>
+		<p class="text-sm text-muted-foreground">
+			Use it to represent in-progress drag links, hover targets, or simplified relationship lines.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Connection in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A baseline connector line with endpoint marker.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Connection aria-label="Example connection" />
 			{/snippet}
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Connection to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Connection.">
 		<InstallerTabs slug="connection" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Connection component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Ready-to-use SVG curve for connection previews and placeholders.</li>
 			<li>Supports custom SVG attributes like stroke styling and sizing.</li>
 			<li>Allows optional child markup for additional SVG annotations.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Connection.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Apply class names or attributes to style the connector.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Connection aria-label="Node connection" class="text-primary" />
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Connection component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Connection.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Node, CodeBlock } from '$lib/index.js';
+	import { Node } from '$lib/index.js';
 	import {
 		DocsPage,
 		DocsSection,
@@ -21,7 +21,7 @@
 	<p class="text-xs text-muted-foreground">Runs after transcription completes.</p>
 </Node>`;
 
-	const props = [
+	const propsRows = [
 		{
 			name: 'class',
 			type: 'string',
@@ -50,17 +50,18 @@
 	title="Node"
 	description="Build node cards that represent steps or entities in a workflow."
 >
-	<p class="text-sm leading-6 text-muted-foreground">
-		Node provides a reusable card-like container for titles, metadata, and action affordances in
-		diagrams.
-	</p>
+	<DocsSection
+		title="Intro"
+		description="Node provides a reusable card surface for workflow steps and graph entities."
+	>
+		<p class="text-sm text-muted-foreground">
+			Place titles, status copy, controls, and metadata inside each node while keeping consistent
+			visual rhythm.
+		</p>
+	</DocsSection>
 
-	<DocsSection title="Preview" description="See Node in context.">
-		<PreviewCodeTabs
-			code={previewCode}
-			language="svelte"
-			previewClass="grid min-h-[220px] place-items-center"
-		>
+	<DocsSection title="Preview" description="A compact node card with title and state text.">
+		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="min-h-[240px] items-center">
 			{#snippet preview()}
 				<Node class="w-64 space-y-1">
 					<p class="font-medium">Review Draft</p>
@@ -70,26 +71,30 @@
 		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection
-		title="Installation"
-		description="Add Node to your project with your preferred setup path."
-	>
+	<DocsSection title="Installation" description="Install Node.">
 		<InstallerTabs slug="node" />
 	</DocsSection>
 
-	<DocsSection title="Features" description="Highlights of the Node component.">
-		<ul class="ml-5 list-disc space-y-2 text-sm leading-6 text-muted-foreground">
+	<DocsSection title="Features" description="Common usage patterns.">
+		<ul class="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
 			<li>Card-like node primitive with sensible spacing and shadow defaults.</li>
 			<li>Flexible children API supports headers, status badges, and action rows.</li>
 			<li>Useful for both interactive flow editors and static workflow previews.</li>
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Basic usage example for Node.">
-		<CodeBlock code={usageCode} language="svelte" />
+	<DocsSection title="Usage and API" description="Render custom node content with your app state.">
+		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="min-h-[240px] items-center">
+			{#snippet preview()}
+				<Node class="space-y-2">
+					<h3 class="text-sm font-medium">Generate Summary</h3>
+					<p class="text-xs text-muted-foreground">Runs after transcription completes.</p>
+				</Node>
+			{/snippet}
+		</PreviewCodeTabs>
 	</DocsSection>
 
-	<DocsSection title="Props" description="Supported props for the Node component.">
-		<PropsTable rows={props} />
+	<DocsSection title="Props" description="Primary props for Node.">
+		<PropsTable rows={propsRows} />
 	</DocsSection>
 </DocsPage>
