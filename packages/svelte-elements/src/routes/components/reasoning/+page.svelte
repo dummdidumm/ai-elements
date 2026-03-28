@@ -88,7 +88,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Use with chat streaming state.">
+	<DocsSection title="Usage and API" description="Use with chat streaming state.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

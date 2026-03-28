@@ -63,12 +63,10 @@
 	title="Conversation"
 	description="A scrollable conversation container for chat messages, timeline controls, and transcript utilities."
 >
-	<DocsSection title="Overview" description="Wrap your transcript in a dedicated chat surface.">
-		<p class="text-sm text-muted-foreground">
-			Conversation provides the structural container for message timelines and is typically paired
-			with message and prompt-input components.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Conversation provides the structural container for message timelines and is typically paired
+		with message and prompt-input components.
+	</p>
 
 	<DocsSection
 		title="Preview"
@@ -106,7 +104,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render a transcript from array-based chat state.">
+	<DocsSection title="Usage and API" description="Render a transcript from array-based chat state.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="p-4">
 			{#snippet preview()}
 				<Conversation class="h-72 rounded-xl border p-3">

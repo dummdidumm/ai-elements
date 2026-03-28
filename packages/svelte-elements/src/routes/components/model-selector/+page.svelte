@@ -59,15 +59,10 @@
 	title="Model Selector"
 	description="A wrapper for model-picking controls, command palette content, and searchable provider groups."
 >
-	<DocsSection
-		title="Overview"
-		description="Build model selection flows for chat and tool execution."
-	>
-		<p class="text-sm text-muted-foreground">
-			ModelSelector is a styled container that can host command-style search, grouped options, and
-			provider-specific branding.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		ModelSelector is a styled container that can host command-style search, grouped options, and
+		provider-specific branding.
+	</p>
 
 	<DocsSection title="Preview" description="A lightweight selector with search and popular models.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">

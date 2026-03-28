@@ -79,7 +79,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Drop into loading or thinking indicators.">
+	<DocsSection title="Usage and API" description="Drop into loading or thinking indicators.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

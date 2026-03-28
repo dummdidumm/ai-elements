@@ -45,12 +45,10 @@
 	title="Checkpoint"
 	description="Mark key moments in a conversation and offer a clear restore action for earlier state."
 >
-	<DocsSection title="Overview" description="Use checkpoints to support reversible chat workflows.">
-		<p class="text-sm text-muted-foreground">
-			Checkpoint helps users return to a known-good point in a thread, which is especially useful
-			when exploring multiple solution paths.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Checkpoint helps users return to a known-good point in a thread, which is especially useful when
+		exploring multiple solution paths.
+	</p>
 
 	<DocsSection title="Preview" description="A single checkpoint row with a restore button.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -76,7 +74,10 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render checkpoints from saved chat history milestones.">
+	<DocsSection
+		title="Usage and API"
+		description="Render checkpoints from saved chat history milestones."
+	>
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				{#each ['Before refactor', 'Before dependency upgrade'] as label (label)}

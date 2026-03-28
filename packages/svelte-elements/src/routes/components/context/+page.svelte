@@ -53,15 +53,10 @@
 	title="Context"
 	description="A compact wrapper for model context usage, token summaries, and related metadata."
 >
-	<DocsSection
-		title="Overview"
-		description="Show context-window details close to the chat composer or transcript."
-	>
-		<p class="text-sm text-muted-foreground">
-			Context is useful for displaying token budgets, model choice, and cost hints in a low-friction
-			inline format.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Context is useful for displaying token budgets, model choice, and cost hints in a low-friction
+		inline format.
+	</p>
 
 	<DocsSection title="Preview" description="A simple context usage pill.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -90,7 +85,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Display token breakdown entries from state.">
+	<DocsSection title="Usage and API" description="Display token breakdown entries from state.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<Context class="rounded-lg border px-3 py-2">

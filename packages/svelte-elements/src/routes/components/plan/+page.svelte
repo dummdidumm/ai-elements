@@ -106,15 +106,10 @@
 	title="Plan"
 	description="A collapsible planning surface for multi-step execution, streaming states, and progress communication."
 >
-	<DocsSection
-		title="Overview"
-		description="Use Plan when an assistant needs to show structured next steps."
-	>
-		<p class="text-sm text-muted-foreground">
-			Plan combines a summary header with expandable details, making it ideal for long-running tasks
-			and implementation roadmaps.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Plan combines a summary header with expandable details, making it ideal for long-running tasks
+		and implementation roadmaps.
+	</p>
 
 	<DocsSection title="Preview" description="A complete plan card with trigger and checklist.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">

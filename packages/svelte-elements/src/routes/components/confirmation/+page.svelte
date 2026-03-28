@@ -60,15 +60,10 @@
 	title="Confirmation"
 	description="Alert-style UI for approvals, accepts/rejects, and post-action status in tool workflows."
 >
-	<DocsSection
-		title="Overview"
-		description="Use confirmation prompts when a tool action needs explicit approval."
-	>
-		<p class="text-sm text-muted-foreground">
-			This component provides a clear container for approval requests and final outcomes in
-			human-in- the-loop flows.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		This component provides a clear container for approval requests and final outcomes in
+		human-in-the-loop flows.
+	</p>
 
 	<DocsSection title="Preview" description="A confirmation request with approve/reject actions.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -101,7 +96,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Switch content based on a local approval state.">
+	<DocsSection title="Usage and API" description="Switch content based on a local approval state.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<Confirmation>

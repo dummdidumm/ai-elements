@@ -61,15 +61,10 @@
 	title="Prompt Input"
 	description="A form wrapper for prompt text, attachments, and submit actions in chat-driven applications."
 >
-	<DocsSection
-		title="Overview"
-		description="Compose message input flows with files, tools, and model controls."
-	>
-		<p class="text-sm text-muted-foreground">
-			PromptInput acts as the root form for chat submission. Add any controls you need while keeping
-			a consistent input shell.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		PromptInput acts as the root form for chat submission. Add any controls you need while keeping a
+		consistent input shell.
+	</p>
 
 	<DocsSection
 		title="Preview"
@@ -117,7 +112,10 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Bind text state and submit through an onsubmit handler.">
+	<DocsSection
+		title="Usage and API"
+		description="Bind text state and submit through an onsubmit handler."
+	>
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<PromptInput

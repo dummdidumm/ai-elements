@@ -81,7 +81,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Map suggestions to button actions.">
+	<DocsSection title="Usage and API" description="Map suggestions to button actions.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

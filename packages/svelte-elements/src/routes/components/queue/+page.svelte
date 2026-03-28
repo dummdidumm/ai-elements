@@ -59,15 +59,10 @@
 	title="Queue"
 	description="A structured container for ordered work items, task progress, and AI workflow status updates."
 >
-	<DocsSection
-		title="Overview"
-		description="Show pending and completed work in a compact ordered block."
-	>
-		<p class="text-sm text-muted-foreground">
-			Queue is useful for to-do lists, execution traces, and progress UI where users need a quick
-			view of what happened and what is next.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Queue is useful for to-do lists, execution traces, and progress UI where users need a quick view
+		of what happened and what is next.
+	</p>
 
 	<DocsSection title="Preview" description="A queue representing an agent execution pipeline.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -96,7 +91,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render queue rows from structured task state.">
+	<DocsSection title="Usage and API" description="Render queue rows from structured task state.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<Queue>

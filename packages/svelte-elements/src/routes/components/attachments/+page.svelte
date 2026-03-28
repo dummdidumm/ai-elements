@@ -53,12 +53,10 @@
 	title="Attachments"
 	description="A flexible container for rendering uploaded files, media chips, and source references in chat interfaces."
 >
-	<DocsSection title="Overview" description="Display selected files near prompt input or messages.">
-		<p class="text-sm text-muted-foreground">
-			Use <code>Attachments</code> to group files with consistent spacing while keeping file rendering
-			fully composable.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Use <code>Attachments</code> to group files with consistent spacing while keeping file rendering fully
+		composable.
+	</p>
 
 	<DocsSection title="Preview" description="A compact attachment row for a chat composer.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -88,7 +86,10 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render dynamic attachments from your local state.">
+	<DocsSection
+		title="Usage and API"
+		description="Render dynamic attachments from your local state."
+	>
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<Attachments class="rounded-lg border p-2">

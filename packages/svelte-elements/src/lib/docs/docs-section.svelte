@@ -16,14 +16,14 @@
 	} = $props();
 </script>
 
-<section class={cn('space-y-4', className)}>
+<section class={cn('space-y-5', className)}>
 	<div class="space-y-2">
-		<h2 class="text-2xl font-semibold tracking-tight">{title}</h2>
+		<h2 class="text-2xl font-semibold tracking-tight md:text-[1.65rem]">{title}</h2>
 		{#if description}
-			<p class="text-sm text-muted-foreground">{description}</p>
+			<p class="text-sm leading-6 text-muted-foreground">{description}</p>
 		{/if}
 	</div>
-	<Separator />
+	<Separator class="bg-border/80" />
 	<div class="space-y-4">
 		{@render children?.()}
 	</div>

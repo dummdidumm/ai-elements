@@ -59,15 +59,10 @@
 	title="Message"
 	description="Core message container for user and assistant chat turns with flexible content and actions."
 >
-	<DocsSection
-		title="Overview"
-		description="Use Message as the base building block of each chat turn."
-	>
-		<p class="text-sm text-muted-foreground">
-			Message is intentionally composable: add markdown renderers, tool output, actions, and branch
-			controls as children.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Message is intentionally composable: add markdown renderers, tool output, actions, and branch
+		controls as children.
+	</p>
 
 	<DocsSection title="Preview" description="Two messages with distinct user and assistant styling.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -100,7 +95,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Map chat state to message components.">
+	<DocsSection title="Usage and API" description="Map chat state to message components.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<div class="space-y-3">

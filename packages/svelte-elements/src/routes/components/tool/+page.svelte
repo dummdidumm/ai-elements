@@ -94,7 +94,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render directly from AI SDK tool parts.">
+	<DocsSection title="Usage and API" description="Render directly from AI SDK tool parts.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

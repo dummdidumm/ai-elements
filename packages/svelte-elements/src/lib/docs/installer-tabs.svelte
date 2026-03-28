@@ -36,8 +36,11 @@
 	);
 </script>
 
-<Tabs.Root class={cn('w-full gap-0 rounded-xl border', className)} value="ai-elements">
-	<div class="border-b p-1">
+<Tabs.Root
+	class={cn('w-full gap-0 overflow-hidden rounded-xl border bg-card', className)}
+	value="ai-elements"
+>
+	<div class="border-b bg-muted/20 px-2 pt-1.5">
 		<Tabs.List class="w-fit" variant="line">
 			<Tabs.Trigger value="ai-elements">AI Elements</Tabs.Trigger>
 			<Tabs.Trigger value="shadcn-cli">shadcn CLI</Tabs.Trigger>

@@ -53,15 +53,10 @@
 	title="Chain of Thought"
 	description="A structured container for high-level reasoning summaries, steps, and progress narratives."
 >
-	<DocsSection
-		title="Overview"
-		description="Present clear reasoning steps without exposing hidden internals."
-	>
-		<p class="text-sm text-muted-foreground">
-			Use this component to display user-facing reasoning progress such as planning phases, search
-			results, and decision checkpoints.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		Use this component to display user-facing reasoning progress such as planning phases, search
+		results, and decision checkpoints.
+	</p>
 
 	<DocsSection title="Preview" description="A simple multi-step reasoning flow.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -90,7 +85,10 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render steps from state for a live execution log.">
+	<DocsSection
+		title="Usage and API"
+		description="Render steps from state for a live execution log."
+	>
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<ChainOfThought class="rounded-xl border p-3">

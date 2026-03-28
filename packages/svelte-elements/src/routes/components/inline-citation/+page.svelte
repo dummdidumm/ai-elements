@@ -49,15 +49,10 @@
 	title="Inline Citation"
 	description="Render citation markers inline with model output to keep sources discoverable without breaking reading flow."
 >
-	<DocsSection
-		title="Overview"
-		description="Add source markers directly in AI-generated responses."
-	>
-		<p class="text-sm text-muted-foreground">
-			InlineCitation keeps references close to the claim they support, which helps users quickly
-			verify generated content.
-		</p>
-	</DocsSection>
+	<p class="text-sm text-muted-foreground">
+		InlineCitation keeps references close to the claim they support, which helps users quickly
+		verify generated content.
+	</p>
 
 	<DocsSection title="Preview" description="Citation marker embedded in response text.">
 		<PreviewCodeTabs code={previewCode} language="svelte" previewClass="items-start">
@@ -84,7 +79,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Pair citation markers with a source list.">
+	<DocsSection title="Usage and API" description="Pair citation markers with a source list.">
 		<PreviewCodeTabs code={usageCode} language="svelte" previewClass="items-start">
 			{#snippet preview()}
 				<p class="text-sm">

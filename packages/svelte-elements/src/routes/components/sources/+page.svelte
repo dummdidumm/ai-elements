@@ -80,7 +80,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render per-message source references.">
+	<DocsSection title="Usage and API" description="Render per-message source references.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 

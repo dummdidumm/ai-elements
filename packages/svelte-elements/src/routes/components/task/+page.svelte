@@ -83,7 +83,7 @@
 		</ul>
 	</DocsSection>
 
-	<DocsSection title="Usage" description="Render task cards from workflow data.">
+	<DocsSection title="Usage and API" description="Render task cards from workflow data.">
 		<CodeBlock code={usageCode} language="svelte" />
 	</DocsSection>
 
