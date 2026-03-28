@@ -18,6 +18,23 @@
 	} = $props();
 
 	const keyedLines = $derived(addKeysToTokens(tokenized.tokens));
+
+	const escapeHtml = (value: string) =>
+		value
+			.replaceAll('&', '&amp;')
+			.replaceAll('<', '&lt;')
+			.replaceAll('>', '&gt;')
+			.replaceAll('"', '&quot;')
+			.replaceAll("'", '&#39;');
+
+	const renderLineTokens = (line: (typeof keyedLines)[number]) =>
+		line.tokens
+			.map(({ token }) => {
+				const style = escapeHtml(tokenInlineStyle(token));
+				const content = escapeHtml(token.content);
+				return `<span class="dark:!bg-[var(--shiki-dark-bg)] dark:!text-[var(--shiki-dark)]" style="${style}">${content}</span>`;
+			})
+			.join('');
 </script>
 
 <pre
@@ -37,13 +54,7 @@
 				{#if keyedLine.tokens.length === 0}
 					{'\n'}
 				{:else}
-					{#each keyedLine.tokens as { token, key } (key)}
-						<span
-							class="dark:!bg-[var(--shiki-dark-bg)] dark:!text-[var(--shiki-dark)]"
-							style={tokenInlineStyle(token)}>
-							{token.content}
-						</span>
-					{/each}
+					{@html renderLineTokens(keyedLine)}
 				{/if}
 			</span>
 		{/each}
